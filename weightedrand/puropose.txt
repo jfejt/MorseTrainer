@@ -1,0 +1,11 @@
+the purpose of this function is to return some charecter from a list of charecters with a greater chance of returning a charecter that is weighted more heavily than one which is weighted less heavily. The minimum weighte is set by a lower limit, which will probably be set to 1 (there is always some possibility of getting the charecter) or 0 (the charecter will never be chosen from the pool). In this case every number will be assigned some weighte value, and start with a default value so that everythign is weighted equally. From there the value can be increasted or decreasted manually. 
+
+the values will be stored in a balanced tree, with each node containig the value of the charecter it represents, as well as the sum of the values underneath it. To choose a charecter, a picker will start at the root node of the tree and call the rand function and perform a modulo by the total value of everything in the tree.if the result is within the range of 1 to the root's inidividual value, that node's char is returned. If the value is within the range of the roots individual value to the value of the sum of the left node plus the roots inidividual value, the process is repeated on the left node. if value is within the range of the left node's sum plus the roots individual value to the sum of the entire tree, then the process is repeated on the right node. i think thats O(log(n)) 
+
+the tree must be balanced in order to maximize efficiency. However it must be sortable by charecters in order to adjust weights. in that case maybe i shouldn't actually balance it by height, but rather by weight. if it becomes unevenly weighted the tree would rotate in order to preserve alphabet order. 
+
+What if i didnt use weights at all but rather just the structure of the tree. That might lead to weirdness though. 
+
+The problem now is how to decide the best point to divide at.  Maybe after each value change or addition, a function can start at the root and calcualte if one rotation would make it more balanced. If so it will complete it and check again.. Then it'll move on to each of the children and repeat the process. this seems really inefficient though, and could lead to the entire tree having to be recursively processed after every change.
+
+ 

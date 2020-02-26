@@ -1,0 +1,6 @@
+short mark, dot or "dit" (.) "dot durration " is one time unit long
+longer mark, dash, or "dah" (-) - three time units long
+inner element gap between the dots and dashes within a charcter - one dot duration or one unit long
+short gap (between letters) three time units long
+medium gap (between  words )seven time units long
+
