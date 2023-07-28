@@ -1,4 +1,4 @@
-#include<ncurses.h>
+#include<ncurses/ncurses.h>
 #include"morse.h"
 #include"player.h"
 #include"binout.h"
@@ -15,7 +15,8 @@ int main() {
     scrollok(stdscr,TRUE);
     cbreak();
     srand(time(NULL));//seeding random number generator
-    alphabet morse("letters.txt"); //load morse code characters
+    char characterFile[] = "letters.txt";
+    alphabet morse(characterFile); //load morse code characters
     player output(60); //init morse code audio with time unit of 60
     char ch,input;
 	//while loop will generate a random morse character, print the pattern, play it, and wait for user to 

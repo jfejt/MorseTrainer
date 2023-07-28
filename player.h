@@ -1,5 +1,5 @@
 #include<portaudio.h>
-#include<ncurses.h>
+#include<ncurses/ncurses.h>
 
 typedef struct
 {

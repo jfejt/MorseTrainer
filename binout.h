@@ -1,5 +1,5 @@
 #include<iostream>
-#include<ncurses.h>
+#include<ncurses/ncurses.h>
 using namespace std;
 
 //print binary representations of int to console
